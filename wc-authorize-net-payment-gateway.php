@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Wc Authorize Net Payment Gateway
+ * Plugin Name: WC Authorize Net Payment Gateway
  * Plugin URI:  https://aiarnob.com/plugins/wc-authorize-payment-gateway/
- * Description: WC Authorize.net Payment Gateway
+ * Description: Custom WooCommerce payment gateway development for Authorize.net
  * Version: 0.0.1
  * Author: Aminur Islam Arnob
  * Author URI: https://aiarnob.com/plugins/wc-authorize-payment-gateway/
