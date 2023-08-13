@@ -146,7 +146,27 @@ final class WcAuthorizeNetPaymentGateway {
         $this->includes();
         $this->init_hooks();
 
+        /*Payment gateway settings*/
+        if ( ! class_exists( 'WC_Payment_Gateway' ) ) {
+            return;
+        }
+
+        include_once WC_AUTHORIZE_NET_PAYMENT_GATEWAY_INC_DIR . '/AuthorizePaymentGateway.php';
+        add_filter( 'woocommerce_payment_gateways', [ $this, 'add_authorizenet_gateway' ] );
+        /*End payment gateway settings*/
+
         do_action( 'wc_authorize_net_payment_gateway_loaded' );
+    }
+
+    /**
+     * Add custom payment method to woo payment gateway
+     *
+     * @param [type] $methods
+     * @return void
+     */
+    public function add_authorizenet_gateway( $methods ) {
+        $methods[] = 'AuthorizePaymentGateway';
+        return $methods;
     }
 
     /**
